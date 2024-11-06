@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <style type="text/css"/>
+    
+      /******************************************
+       ******************************************
+       ******************************************
+       ***                                    ***
+       ***                                    ***
+       *** COLLAPSING/EXPANDING Content Hosts ***
+       ***                                    ***
+       ***                                    ***
+       ******************************************
+       ******************************************
+       ******************************************/
+       
+      /*************************************************************************
+       * 1. ALWAYS Hide CheckBoxes */                                          *
+       * 2. INITially Hide each Content Container                              *
+       * 3. Enable Sibling-Selectors to Undo Hiding (include quick animations) *
+       * 4. ANYTHING ELSE NECESSARY ???                                        *
+       *************************************************************************/
+      
+      /****************************************************************************************
+       * IDs of import:
+       *  HEADERS :: [ Professional | Personal | Educational | Test ]
+       *  SUB-HEADERS :: [ WebAsmBlazorPWA | Static-HTML | Static-CSS | Static-JS ]
+       * ************************************************************************************************
+       * FOR HERE ON OUT, {HEADERS[0..3]} is placeholder for HEADERS above, 0-3 refers to index
+       * FOR HERE ON OUT, {[SUB-HEADERS[0..3]} is placeholder for SUB-HEADERS above, 0-3 refer to index
+       * ************************************************************************************************
+       *  CHECKERS:                 #Expando-Toggler-Checker-{HEADERS[0..3]}
+       *  SUB-CHECKERS:             #Expando-Toggler-Checker-{HEADERS[0..3]}-{SUB-HEADERS[0..3]}
+       *  COLLAPSABLE-CONTENT:      #Expando-Content-{HEADERS[0..3]}
+       *  COLLAPSABLE-CONTENT-SUB:  #Expando-Content-{HEADERS[0..3]}-{SUB-HEADERS[0..3]}
+       *  MAJOR-LISTINGS:           #Listing-of-Apps-{HeaderS[0..3]}
+       *  SUB-MAJOR-LISTINGS:       #Listing-of-Apps-{HEADERS[0..3]}-{SUB-HEADERS[0..3]}
+       
+       ****************************************************************************************/
+      
+      /*** 0. Any Root level or near root level CSS (including variable instantiation and/or themes) ***/
+      
+      :root {
+        --four-corners-gradient-color1: #0000B0;
+        --four-corners-gradient-color2: #000050;
+        --four-corners-gradient-color3: #000020;
+        --four-corners-gradient-color4: #000080;
+
+        --four-corners-gradient-text-color1: azure;
+
+        --four-corners-gradient-background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color3), var(--four-corners-gradient-color1) 50%);
+        --four-corners-gradient-background-blend-mode: screen;
+
+        --four-corners-gradient-border: outset #cab;
+        --four-corners-gradient-border-radius: 0.3em;
+        --four-corners-gradient-border-width: 2px;
+
+        --four-corners-gradient-overlay-input-bgcolor: #cccccc33;
+        --four-corners-gradient-overlay-input-blend-mode: overlay;
+      }
+
+      .default-blue-theme {
+        --four-corners-gradient-color1: #0000B0;
+        --four-corners-gradient-color2: #000050;
+        --four-corners-gradient-color3: #000020;
+        --four-corners-gradient-color4: #000080;
+
+        --four-corners-gradient-text-color1: azure;
+        
+        --four-corners-gradient-background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color3), var(--four-corners-gradient-color1) 50%);
+        --four-corners-gradient-background-blend-mode: screen;
+
+        --four-corners-gradient-border: outset #cab;
+        --four-corners-gradient-border-radius: 0.3em;
+        --four-corners-gradient-border-width: 2px;
+
+        --four-corners-gradient-overlay-input-bgcolor: #cccccc33;
+        --four-corners-gradient-overlay-input-blend-mode: overlay;
+      }
+
+      .purple-theme {
+        --four-corners-gradient-color1: #9600B0;
+        --four-corners-gradient-color2: #250050;
+        --four-corners-gradient-color3: #000020;
+        --four-corners-gradient-color4: #3F0080;
+
+        --four-corners-gradient-text-color1: azure;
+        
+        --four-corners-gradient-background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color3), var(--four-corners-gradient-color1) 50%);
+        --four-corners-gradient-background-blend-mode: screen;
+
+        --four-corners-gradient-border: outset #cab;
+        --four-corners-gradient-border-radius: 0.3em;
+        --four-corners-gradient-border-width: 2px;
+
+        --four-corners-gradient-overlay-input-bgcolor: #cccccc33;
+        --four-corners-gradient-overlay-input-blend-mode: overlay;
+      }
+      
+      body, table, tr.full-component, td.full-component {
+        background: var(--four-corners-gradient-background);
+        border: var(--four-corners-gradient-border);
+        border-radius: var(--four-corners-gradient-border-radius);
+        border-width: var(--four-corners-gradient-border-width);
+        
+        color: var(--four-corners-gradient-text-color1);
+      }
+
+
+
+      ol, ul, ol li, ul li {
+        border: var(--four-corners-gradient-border);
+        border-radius: var(--four-corners-gradient-border-radius);
+        border-width: var(--four-corners-gradient-border-width);
+      }
+      
+      
+      /*** 1. Hide CheckBoxes used explicitly for our Expando Content Hosts ***/
+      
+      /*****************************************
+      #Cloud-limit-tracker-checkToggler
+      , #Barrett-limit-tracker-checkToggler
+      , #Tifa-limit-tracker-checkToggler
+      , #Aerith-limit-tracker-checkToggler 
+      , #Nanaki-limit-tracker-checkToggler
+      , #Yuffie-limit-tracker-checkToggler
+      , #CaitSith-limit-tracker-checkToggler 
+      , #Vincent-limit-tracker-checkToggler
+      , #Cid-limit-tracker-checkToggler
+      ******************************************/ 
+      
+      /**********************************************************************************
+       * IDs of import:                                                                 *
+       *  HEADERS :: [ Professional | Personal | Educational | Test ]                   *
+       *  SUB-HEADERS :: [ WebAsmBlazorPWA | Static-HTML | Static-CSS | Static-JS ]     *
+       * ---------------------------------------------------------------------------    *
+       * CLASSes of import:                                                             *
+       *  HEADERS :: [ professional | personal | educational | test ]                   *
+       *  SUB-HEADERS :: [ webasm-blazor-pwa | static-html | static-css | static-js ]   *
+       **********************************************************************************/
+      
+      
+      #Expando-Toggler-Checker-Professional
+      ,   #Expando-Toggler-Checker-Professional-webasm-blazor-pwa
+      ,   #Expando-Toggler-Checker-Professional-static-html
+      ,   #Expando-Toggler-Checker-Professional-static-css
+      ,   #Expando-Toggler-Checker-Professional-static-js
+      , #Expando-Toggler-Checker-Personal
+      ,   #Expando-Toggler-Checker-Personal-webasm-blazor-pwa
+      ,   #Expando-Toggler-Checker-Personal-static-html
+      ,   #Expando-Toggler-Checker-Personal-static-css
+      ,   #Expando-Toggler-Checker-Personal-static-js
+      , #Expando-Toggler-Checker-Educational
+      ,   #Expando-Toggler-Checker-Educational-webasm-blazor-PWA
+      ,   #Expando-Toggler-Checker-Educational-static-HTML
+      ,   #Expando-Toggler-Checker-Educational-static-CSS
+      ,   #Expando-Toggler-Checker-Educational-static-JS
+      , #Expando-Toggler-Checker-Testing
+      ,   #Expando-Toggler-Checker-Testing-WebAsmBlazorPWA
+      ,   #Expando-Toggler-Checker-Testing-Static-HTML
+      ,   #Expando-Toggler-Checker-Testing-Static-CSS
+      ,   #Expando-Toggler-Checker-Testing-Static-JS {
+        display: none;
+      }
+      
+      /*******************************************************************
+      , #Expando-Toggler-Checker-{HEADERS[0..3]} 
+      , #Expando-Toggler-Checker-{HEADERS[0..3]}-{SUB-HEADERS[0..3]} { 
+         display: none;
+        }
+       *******************************************************************/
+        
+       
+      
+      /*** 2. Initially Hide each Expando Content Container so that we only see what we need ***/
+      
+      /********************************************************************
+         [ professional | personal | educational | testing ]
+         [ webasm-blazor-pwa | static-html | static-css | static-js ]
+         -------------------------------------------------------------
+          expandoContent expandoContent-_____
+          expandoTogglerChk expandoTogglerChk-_____-__________
+       *******************************************************************/
+       
+       /********************************
+       .collapsableContent-Cloud 
+        , .collapsableContent-Barrett
+        , .collapsableContent-Tifa
+        , .collapsableContent-Aerith
+        , .collapsableContent-Nanaki
+        , .collapsableContent-Yuffie
+        , .collapsableContent-CaitSith
+        , .collapsableContent-Vincent
+        , .collapsableContent-Cid 
+        *******************************/
+        
+        .expandoContent
+          , .expandoContent-professional
+            , .expandoContent-professional-webasm-blazor-pwa
+            , .expandoContent-professional-static-html
+            , .expandoContent-professional-static-css
+            , .expandoContent-professional-static-js
+          , .expandoContent-personal
+            , .expandoContent-personal-webasm-blazor-pwa
+            , .expandoContent-personal-static-html
+            , .expandoContent-personal-static-css
+            , .expandoContent-personal-static-js
+          , .expandoContent-educational
+            , .expandoContent-educational-webasm-blazor-pwa
+            , .expandoContent-educational-static-html
+            , .expandoContent-educational-static-css
+            , .expandoContent-educational-static-js
+          , .expandoContent-testing
+            , .expandoContent-testing-webasm-blazor-pwa
+            , .expandoContent-testing-static-html
+            , .expandoContent-testing-static-css
+            , .expandoContent-testing-static-js {
+        /* Hide by default */
+        max-height: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 1s;
+      }
+      
+      /*** 3. Enable the sibling-selectors to discover when something is selected,           ***
+       ***     and then expand if checked, collapse if no longer checked ::                  ***
+       ***    Don't forget short animation for the eyes...                                   ***/
+       
+       /****************************************************************************************
+       td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud
+        , td.full-component.toggleCheck-Barrett.checked ~ td.collapsableContent-Barrett 
+        , td.full-component.toggleCheck-Tifa.checked ~ td.collapsableContent-Tifa 
+        , td.full-component.toggleCheck-Aerith.checked ~ td.collapsableContent-Aerith 
+        , td.full-component.toggleCheck-Nanaki.checked ~ td.collapsableContent-Nanaki
+        , td.full-component.toggleCheck-Yuffie.checked ~ td.collapsableContent-Yuffie 
+        , td.full-component.toggleCheck-CaitSith.checked ~ td.collapsableContent-CaitSith 
+        , td.full-component.toggleCheck-Vincent.checked ~ td.collapsableContent-Vincent 
+        , td.full-component.toggleCheck-Cid.checked ~ td.collapsableContent-Cid
+        ***************************************************************************************/
+        
+        
+        td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud     /* head:  professional      */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   webasm-blazor-pwa */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   static-html       */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   static-css        */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   static-js         */
+        , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud   /* head:  professional      */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   webasm-blazor-pwa */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   static-html       */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   static-css        */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   static-js         */
+        , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud   /* head:  professional      */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   webasm-blazor-pwa */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   static-html       */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   static-css        */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   static-js         */
+        , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud   /* head:  professional      */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   webasm-blazor-pwa */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   static-html       */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   static-css        */
+          , td.full-component.toggleCheck-Cloud.checked ~ td.collapsableContent-Cloud /* sub:   static-js         */ {
+          
+          max-height: 100vh; /* TODO:if this obtusely large/dramatic is too big, update later */
+          opacity: 1;
+          visibility: visible;
+          animation: opacity 0.01s infinite;
+        }
+        
+        .expandoTogglerCheck:checked + .expandoContent {
+
+          max-height: 100vh; /* TODO:if this obtusely large/dramatic is too big, update later */
+          opacity: 1;
+          visibility: visible;
+          transition: max-height 1s; 
+        }
+        
+        .toggleCheck:checked + .collapsableContent {
+
+          max-height: 100vh; /* TODO:if this obtusely large/dramatic is too big, update later */
+          opacity: 1;
+          visibility: visible;
+          transition: max-height 1s; 
+        }
+        
+        
+       
+      /*** 4. Anything else necessary for function of this site and/or it's niche functionality?? ***/
+      
+      /* faux button depression animation on-click for the headers clicking */
+      /*td.full-component:target,*/ td.full-component:active
+        , legend div.full-component:active {
+        border: inset #cab;
+        animation: border .8s;
+      }
+      
+      /* BEGIN: Television Static Noise Animation */
+
+      .tv:active + .expandoTogglerCheck:checked { //#Cloud-limit-tracker-checkToggler:checked {
+      
+      background: 
+          linear-gradient(white 50%, black 50%),
+          linear-gradient(black 50%, white 50%);
+        background-size: 2px 2px;
+        //animation: noise 0.2s infinite;
+        animation: noise 0.2s 20;
+        
+      }
+
+      @keyframes noise {
+        0%, 100% {
+          background-position: 0 0, 0 0;
+        }
+        50% {
+          background-position: 1px 1px, -1px -1px;
+        }
+      }
+
+      /* END: Television Static Noise Animation */
+      
+      
+      /*** 5. Any personalized logic and design UNRELATED TO Collapsing/Expanding Content efforts ***/
+      
+      input[type=number] {
+        background-color: #cccccc33;
+        background-blend-mode: overlay;
+      }
+      
+      .menu-item {
+        
+      }
+      
+      .menu, .modal, .window, .form, .panel, .full-component {
+        color: var(--four-corners-gradient-text-color1);
+        
+        background: var(--four-corners-gradient-background);
+        background-blend-mode: var(--four-corners-gradient-background-blend-mode);
+      
+        border: var(--four-corners-gradient-border);
+        border-radius: var(--four-corners-gradient-border-radius);
+        border-width: var(--four-corners-gradient-border-width);
+      }
+      
+      
+       
+      .tiny-button .input-button {
+        
+        border: none;
+        background: none;
+        color: var(--four-corners-gradient-text-color1);
+        font-synthesis: style weight;
+        font-size: 16px;
+        font-weight: 600;
+        
+        margin: 4px;
+        padding-block: 4px;
+      }
+      
+      .tiny-text .tiny-number .editable-label {
+      
+        border: none;
+        background: none;
+        color: var(--four-corners-gradient-text-color1);
+        font-synthesis: style weight;
+        font-weight: 300;
+        
+        margin: 4px;
+        padding-block: 4px;
+      
+        
+      }
+      
+      .numeric-input .custom-input .small-input {
+      
+        border: none;
+        background: none;
+        color: var(--four-corners-gradient-text-color1);
+        font-synthesis: style weight;
+        font-weight: 300;
+      
+        margin: 4px;
+        padding-block: 4px;
+      
+      }
+      
+      
+      
+      .div.content.px-4 {
+        /* background-color: black; */
+        background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color2), var(--four-corners-gradient-color1) 50%);
+        background-blend-mode: screen;
+        color: azure;
+      
+        border: outset #cab;
+        border-radius: 0.3em;
+        border-width: 2px;
+        /*
+        border-color: #cab;
+        border-style: outset;
+        */
+      }
+      
+      
+    
+    </style>
+    
+  </head>
+
+	<body>
+		<h1>This is my SeriusSoft Github Pages</h1>
+		<p>This is hosted on GitHub Pages</p>
+		
+		<div id="apps-host-container" class="host apps-host host-container">
+
+		  <ul>
+        
+        <!-- BEGINNING-OF-INIT_ -->
+        
+        <!-- Professional -->
+        
+        <li class="full-component">
+          <label for="Expando-Toggler-Checker-Professional"> Apps :: Professional </label>
+          <input type="checkBox" id="Expando-Toggler-Checker-Professional" class="expandoTogglerChk expandoTogglerChk-professional">
+          <div id="Expando-Content-Professional" class="expandoContent expandoContent-professional">
+            <ol id="Listing-of-Apps-Professional" class="listing listing-apps listing-professional listing-apps-professional full-component">
+              <!-- PROFESSIONAL :: Web Assembly BLAZOR PWA [Progressive Web App] -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Professional-WebAsmBlazorPWA"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Professional-WebAsmBlazorPWA" class="expandoTogglerChk expandoTogglerChk-professional-webasm-blazor-pwa">
+                  <div id="" class="expandoContent expandoContent-professional-webasm-blazor-pwa">
+                    <ol id="Listing-of-Apps-Professional-WebAsmBlazorPWA" class="listing listing-apps listing-professional listing-apps-professional listing-professional-webasm-blazor-pwa listing-apps-professional-webasm-blazor-pwa full-component">
+                      <li></li>
+                    </ol>
+                  </div>
+                </li>
+                <!-- PROFESSIONAL :: Static HTML | HTML5 -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Professional-Static-HTML"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Professional-Static-HTML" class="expandoTogglerChk expandoTogglerChk-professional-static-html">
+                  <div id="" class="expandoContent expandoContent-professional-static-html">
+                    <ol id="Listing-of-Apps-Professional-Static-HTML" class="listing listing-apps listing-professional listing-apps-professional listing-professional-static-html listing-apps-professional-static-html full-component">
+                      <li></li>
+                    </ol>
+                  </div>
+                </li> 
+                <!-- PROFESSIONAL :: Static CSS | CSS3 (NOT SASS|SCSS|LESS|etc) -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Professional-Static-CSS"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Professional-Static-CSS" class="expandoTogglerChk expandoTogglerChk-professional-static-css">
+                  <div id="" class="expandoContent expandoContent-professional-static-css">
+                    <ol class=" full-component">
+                      <li></li>
+                    </ol>
+                  </div>
+                </li>
+                <!-- PROFESSIONAL :: Static JavaScript -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Professional-Static-JS"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Professional-Static-JS" class="expandoTogglerChk expandoTogglerChk-professional-static-js">
+                  <div id="" class="expandoContent expandoContent-professional-static-js">
+                    <ol class=" full-component">
+                      <li></li>
+                    </ol>
+                  </div>
+                </li>
+                
+            </ol>
+          </div>
+        </li>
+        
+        <!-- Personal -->
+        
+        <li class="full-component">
+          <label for="Expando-Toggler-Checker-Personal"> Apps :: Personal </label>
+          <input type="checkBox" id="Expando-Toggler-Checker-Personal" class="expandoTogglerChk expandoTogglerChk-personal">
+          <div id="Expando-Content-Personal" class="expandoContent expandoContent-personal">
+            <ol id="Listing-of-Apps-Personal" class="listing listing-apps listing-personal listing-apps-personal full-component">
+              <!-- PERSONAL :: Web Assembly BLAZOR PWA [Progressive Web App] -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Personal-WebAsmBlazorPWA"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Personal-WebAsmBlazorPWA" class="expandoTogglerChk expandoTogglerChk-personal-webasm-blazor-pwa">
+                  <div id="" class="expandoContent expandoContent-personal-webasm-blazor-pwa">
+                    <ol id="Listing-of-Apps-Personal-WebAsmBlazorPWA" class="listing listing-apps listing-personal listing-apps-personal listing-personal-webasm-blazor-pwa listing-apps-personal-webasm-blazor-pwa full-component">
+                      <li></li>
+                    </ol>
+                  </div>
+                </li>
+                <!-- PERSONAL :: Static HTML | HTML5 -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Personal-Static-HTML"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Personal-Static-HTML" class="expandoTogglerChk expandoTogglerChk-personal-static-html">
+                  <div id="" class="expandoContent expandoContent-personal-static-html">
+                    <ol id="Listing-of-Apps-Personal-Static-HTML" class="listing listing-apps listing-personal listing-apps-personal listing-personal-static-html listing-apps-personal-static-html full-component">
+                      <li></li>
+                    </ol>
+                  </div>
+                </li> 
+                <!-- PERSONAL :: Static CSS | CSS3 (NOT SASS|SCSS|LESS|etc) -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Personal-Static-CSS"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Personal-Static-CSS" class="expandoTogglerChk expandoTogglerChk-personal-static-css">
+                  <div id="" class="expandoContent expandoContent-personal-static-css">
+                    <ol class=" full-component">
+                      <li></li>
+                    </ol>
+                  </div>
+                </li>
+                <!-- PERSONAL :: Static JavaScript -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Personal-Static-JS"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Personal-Static-JS" class="expandoTogglerChk expandoTogglerChk-personal-static-js">
+                  <div id="" class="expandoContent expandoContent-personal-static-js">
+                    <ol class=" full-component">
+                      <li></li>
+                    </ol>
+                  </div>
+                </li>
+                
+            </ol>
+          </div>
+        </li> 
+        
+        <!-- Educational -->
+        
+        <li class="full-component">
+          <label for="Expando-Toggler-Checker-Educational"> Apps :: Educational </label>
+          <input type="checkBox" id="Expando-Toggler-Checker-Educational" class="expandoTogglerChk expandoTogglerChk-educational">
+          <div id="Expando-Content-Educational" class="expandoContent expandoContent-educational">
+            <ol id="Listing-of-Apps-Educational" class="listing listing-apps listing-educational listing-apps-educational full-component">
+              <!-- EDUCATIONAL :: Web Assembly BLAZOR PWA [Progressive Web App] -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Educational-WebAsmBlazorPWA"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Educational-WebAsmBlazorPWA" class="expandoTogglerChk expandoTogglerChk-educational-webasm-blazor-pwa">
+                  <div id="" class="expandoContent expandoContent-educational-webasm-blazor-pwa">
+                    <ol id="Listing-of-Apps-Educational-WebAsmBlazorPWA" class="listing listing-apps listing-educational listing-apps-educational listing-educational-webasm-blazor-pwa listing-apps-educational-webasm-blazor-pwa full-component">
+                      <li></li>
+                    </ol>
+                  </div>
+                </li>
+                <!-- EDUCATIONAL :: Static HTML | HTML5 -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Educational-Static-HTML"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Educational-Static-HTML" class="expandoTogglerChk expandoTogglerChk-educational-static-html">
+                  <div id="" class="expandoContent expandoContent-educational-static-html">
+                    <ol id="Listing-of-Apps-Educational-Static-HTML" class="listing listing-apps listing-educational listing-apps-educational listing-educational-static-html listing-apps-educational-static-html full-component">
+                      <li></li>
+                    </ol>
+                  </div>
+                </li class="full-component"> 
+                <!-- EDUCATIONAL :: Static CSS | CSS3 (NOT SASS|SCSS|LESS|etc) -->
+                <li>
+                  <label for="Expando-Toggler-Checker-Educational-Static-CSS"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Educational-Static-CSS" class="expandoTogglerChk expandoTogglerChk-educational-static-css full-component">
+                  <div id="" class="expandoContent expandoContent-educational-static-css">
+                    
+                  </div>
+                </li>
+                <!-- EDUCATIONAL :: Static JavaScript -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Educational-Static-JS"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Educational-Static-JS" class="expandoTogglerChk expandoTogglerChk-educational-static-js full-component">
+                  <div id="" class="expandoContent expandoContent-educational-static-js">
+                    <ol>
+                      <li></li>
+                    </ol>
+                  </div>
+                </li>
+                
+            </ol>
+          </div>
+        </li>  
+        
+        <!-- TESTING -->
+        
+        <li class="full-component">
+          <fieldset>
+            <legend><label for="Expando-Toggler-Checker-Testing" id="Expando-Handler" class="expando-handler"> Apps :: In Test | Ad-hoc | Hacks | Quick PoCs [Proofs of Concept] </label></legend>
+            <!-- <label for="Expando-Toggler-Checker-Testing"> Apps :: In Test | Ad-hoc | Hacks | Quick PoCs [Proofs of Concept] </label> -->
+            <input type="checkBox" id="Expando-Toggler-Checker-Testing" class="expando-toggler expandoTogglerChk expando-toggler-testing expandoTogglerChk-testing">
+            <div id="Expando-Content-Testing" class="expandoContent expandoContent-testing">
+              <ol id="Listing-of-Apps-Testing" class="listing listing-apps listing-testing listing-apps-testing full-component"> 
+                <!-- TESTING :: Web Assembly BLAZOR PWA [Progressive Web App] -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Testing-WebAsmBlazorPWA"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Testing-WebAsmBlazorPWA" class="expandoTogglerChk expandoTogglerChk-testing-webasm-blazor-pwa">
+                  <div id="" class="expandoContent expandoContent-testing-webasm-blazor-pwa">
+                    <ol id="Listing-of-Apps-Testing-WebAsmBlazorPWA" class="listing listing-apps listing-testing listing-apps-testing listing-testing-webasm-blazor-pwa listing-apps-testing-webasm-blazor-pwa full-component">
+                      <li></li>
+                    </ol>
+                  </div>
+                </li>
+                <!-- TESTING :: Static HTML | HTML5 -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Testing-Static-HTML"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Testing-Static-HTML" class="expandoTogglerChk expandoTogglerChk-testing-static-html">
+                  <div id="" class="expandoContent expandoContent-testing-static-html">
+                    <ol id="Listing-of-Apps-Testing-Static-HTML" class="listing listing-apps listing-testing listing-apps-testing listing-testing-static-html listing-apps-testing-static-html full-component">
+                      <li></li>
+                    </ol>
+                  </div>
+                </li> 
+                <!-- TESTING :: Static CSS | CSS3 (NOT SASS|SCSS|LESS|etc) -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Testing-Static-CSS"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Testing-Static-CSS" class="expandoTogglerChk expandoTogglerChk-testing-static-css full-component">
+                  <div id="" class="expandoContent expandoContent-testing-static-css">
+                    
+                  </div>
+                </li>
+                <!-- TESTING :: Static JavaScript -->
+                <li class="full-component">
+                  <label for="Expando-Toggler-Checker-Testing-Static-JS"></label>
+                  <input type="checkBox" id="Expando-Toggler-Checker-Testing-Static-JS" class="expandoTogglerChk expandoTogglerChk-testing-static-js full-component">
+                  <div id="" class="expandoContent expandoContent-testing-static-js">
+                    <ol>
+                      <li></li>
+                    </ol>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </fieldset>
+        </li>
+        
+        <!-- END-OF-INITIAL-LISTING -->
+        
+      </ul>
+
+        <!-- Original idea...
+			  <li>
+          <label for=""></label>
+          <input type="checkBox" id="" class="expandoTogglerChk expandoTogglerChk-personal-learning">
+          <div id="" class="expandoContent expandoContent-personal-learning">
+            
+          </div>
+        </li>
+        <li>
+          <label for=""></label>
+          <input type="checkBox" id="" class="expandoTogglerChk expandoTogglerChk-personal-teaching">
+          <div id="" class="expandoContent expandoContent-personal-teaching">
+            
+          </div>
+        </li>
+        <li>
+          <label for=""></label>
+          <input type="checkBox" id="" class="expandoTogglerChk expandoTogglerChk-personal-fun">
+          <div id="" class="expandoContent expandoContent-personal-fun">
+            
+          </div>
+        </li>
+        <li>
+          <label for=""></label>
+          <input type="checkBox" id="" class="expandoTogglerChk expandoTogglerChk-personal-testing">
+          <div id="" class="expandoContent expandoContent-personal-testing">
+            
+          </div>
+        </li> 
+        <li>
+          <label for="">Professional</label>
+          <input type="checkBox" id="" class="expandoTogglerChk expandoTogglerChk-professional">
+          <div id="" class="expandoContent expandoContent-professional">
+            
+          </div>
+        </li>
+		  </ul>
+		  -->
+		  
+		</div>
+		
+	</body>
+	
+	<foot>
+	
+    
+	
+	</foot>
+	
+</html>
