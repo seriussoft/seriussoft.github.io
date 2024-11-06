@@ -1,0 +1,544 @@
+@import '_content/FFBlazorComponents/FFBlazorComponents.bundle.scp.css';
+
+/* /Components/FF7/FF7Menu.razor.rz.scp.css */
+/*@import url(../../Rss/Styles/FF7/FF7Components.css);*/
+
+:root[inherit-scope] {
+
+
+
+}
+
+body[inherit-scope] {
+
+
+}
+
+
+/* /Components/FF7/NumericInput_Local.razor.rz.scp.css */
+:root[b-5ospvj2cnx] {
+  --four-corners-gradient-text-color1: azure;
+}
+
+body[b-5ospvj2cnx] {
+}
+
+.tiny-button .input-button[b-5ospvj2cnx] {
+  border: none;
+  background: none;
+  color: var(--four-corners-gradient-text-color1);
+  font-synthesis: style weight;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 4px;
+  padding-block: 4px;
+}
+
+.tiny-text .tiny-number .editable-label[b-5ospvj2cnx] {
+  border: none;
+  background: none;
+  color: var(--four-corners-gradient-text-color1);
+  font-synthesis: style weight;
+  font-weight: 300;
+  margin: 4px;
+  padding-block: 4px;
+}
+
+.numeric-input .custom-input .small-input[b-5ospvj2cnx] {
+  border: none;
+  background: none;
+  color: var(--four-corners-gradient-text-color1);
+  font-synthesis: style weight;
+  font-weight: 300;
+  margin: 4px;
+  padding-block: 4px;
+}
+
+.menu[b-5ospvj2cnx], .modal[b-5ospvj2cnx], .window[b-5ospvj2cnx], .form[b-5ospvj2cnx], .panel[b-5ospvj2cnx], .full-component[b-5ospvj2cnx] {
+  color: var(--four-corners-gradient-text-color1);
+  background: var(--four-corners-gradient-background);
+  background-blend-mode: var(--four-corners-gradient-background-blend-mode);
+  border: var(--four-corners-gradient-border);
+  border-radius: var(--four-corners-gradient-border-radius);
+  border-width: var(--four-corners-gradient-border-width);
+}
+/* /Components/FF7/SoloLimitTracker.razor.rz.scp.css */
+/*@import url(../../Rss/Styles/FF7/FF7Components.css);*/
+
+:root[inherit-scope] {
+
+  --four-corners-gradient-color1: #0000B0;
+  --four-corners-gradient-color2: #000050;
+  --four-corners-gradient-color3: #000020;
+  --four-corners-gradient-color4: #000080;
+
+  --four-corners-gradient-text-color1: azure;
+
+  --four-corners-gradient-background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color3), var(--four-corners-gradient-color1) 50%);
+  --four-corners-gradient-background-blend-mode: screen;
+
+  --four-corners-gradient-border: outset #cab;
+  --four-corners-gradient-border-radius: 0.3em;
+  --four-corners-gradient-border-width: 2px;
+
+  --four-corners-gradient-overlay-input-bgcolor: #cccccc33;
+  --four-corners-gradient-overlay-input-blend-mode: overlay;
+
+}
+
+body[inherit-scope] {
+  
+}
+
+/*:root {
+  --four-corners-gradient-color1: #0000B0;
+  --four-corners-gradient-color2: #000050;
+  --four-corners-gradient-color3: #000020;
+  --four-corners-gradient-color4: #000080;
+
+  --four-corners-gradient-text-color1: azure;
+  
+  --four-corners-gradient-background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color2), var(--four-corners-gradient-color1) 50%);
+  --four-corners-gradient-background-blend-mode: screen;
+
+  --four-corners-gradient-border: outset #cab;
+  --four-corners-gradient-border-radius: 0.3em;
+  --four-corners-gradient-border-width: 2px;
+
+  --four-corners-gradient-overlay-input-bgcolor: #cccccc33;
+  --four-corners-gradient-overlay-input-blend-mode: overlay;
+
+}
+
+.default-blue-theme {
+  --four-corners-gradient-color1: #0000B0;
+  --four-corners-gradient-color2: #000050;
+  --four-corners-gradient-color3: #000020;
+  --four-corners-gradient-color4: #000080;
+
+  --four-corners-gradient-text-color1: azure;
+  
+  --four-corners-gradient-background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color2), var(--four-corners-gradient-color1) 50%);
+  --four-corners-gradient-background-blend-mode: screen;
+
+  --four-corners-gradient-border: outset #cab;
+  --four-corners-gradient-border-radius: 0.3em;
+  --four-corners-gradient-border-width: 2px;
+
+  --four-corners-gradient-overlay-input-bgcolor: #cccccc33;
+  --four-corners-gradient-overlay-input-blend-mode: overlay;
+}
+
+.purple-theme {
+  --four-corners-gradient-color1: #9600B0;
+  --four-corners-gradient-color2: #250050;
+  --four-corners-gradient-color3: #000020;
+  --four-corners-gradient-color4: #3F0080;
+
+  --four-corners-gradient-text-color1: azure;
+  
+  --four-corners-gradient-background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color2), var(--four-corners-gradient-color1) 50%);
+  --four-corners-gradient-background-blend-mode: screen;
+
+  --four-corners-gradient-border: outset #cab;
+  --four-corners-gradient-border-radius: 0.3em;
+  --four-corners-gradient-border-width: 2px;
+
+  --four-corners-gradient-overlay-input-bgcolor: #cccccc33;
+  --four-corners-gradient-overlay-input-blend-mode: overlay;
+}*/
+
+/**********************************************
+  * --four-corners-gradient-color1: #9600B0;  *
+  * --four-corners-gradient-color2: #250050;  *
+  * --four-corners-gradient-color3: #000020;  *
+  * --four-corners-gradient-color4: #3F0080;  *
+  *********************************************/
+
+/*input[type=number] {
+  background-color: #cccccc33;
+  background-blend-mode: overlay;
+}*/
+
+.Individual-Limit-Tracker[inherit-scope] {
+
+  /*
+  border-radius: 3px;
+  border-color: ActiveBorder;
+  border-width: revert-layer;
+  */
+  /******
+  background-color: mediumblue;
+                    #0505cc
+   ****/
+  /*background: mediumblue linear-gradient(180deg, #2323de6e, #1313b6df), 
+                         linear-gradient(270deg, #00008fef, #0505cc);*/
+  /*****
+  linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))
+  *****/
+
+  /*
+  color: azure;
+  background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color2), var(--four-corners-gradient-color1) 50%);
+  background-blend-mode: screen;
+
+  border: outset #cab;
+  border-radius: 0.3em;
+  border-width: 2px;
+  */
+
+  /*********  Below is the real deal, if needed back in its OG spot   **********/
+  /*
+  color: var(--four-corners-gradient-text-color1);
+  background: var(--four-corners-gradient-background);
+  background-blend-mode: var(--four-corners-gradient-background-blend-mode);
+
+  border: var(--four-corners-gradient-border);
+  border-radius: var(--four-corners-gradient-border-radius);
+  border-width: var(--four-corners-gradient-border-width);
+  */
+}
+
+.menu[inherit-scope] {
+
+}
+
+.menu-item[inherit-scope] {
+
+}
+
+/******** THIS IS AN OVERRIDE IN CASE WE NEED TO SPECIFY FOR .Individual-Limit-Tracker  ********/
+/*
+.Individual-Limit-Tracker, .menu,
+  .modal, .window, .form, .panel {
+
+  color: var(--four-corners-gradient-text-color1);
+  background: var(--four-corners-gradient-background);
+  background-blend-mode: var(--four-corners-gradient-background-blend-mode);
+  
+  border: var(--four-corners-gradient-border);
+  border-radius: var(--four-corners-gradient-border-radius);
+  border-width: var(--four-corners-gradient-border-width);
+
+}
+
+*/
+
+.menu[inherit-scope], .modal[inherit-scope], .window[inherit-scope], .form[inherit-scope], .panel[inherit-scope], .full-component[inherit-scope] {
+  color: var(--four-corners-gradient-text-color1);
+  
+  background: var(--four-corners-gradient-background);
+  background-blend-mode: var(--four-corners-gradient-background-blend-mode);
+
+  border: var(--four-corners-gradient-border);
+  border-radius: var(--four-corners-gradient-border-radius);
+  border-width: var(--four-corners-gradient-border-width);
+}
+
+/*   BEGIN :: Collapsing/Expanding Panels    */
+
+/* 1. Hide the checkbox (use <label for="checkBoxID" .../> so label becomes clickable... */
+.toggleCheck[inherit-scope] {
+  display: none;
+}
+
+/* 2. Hide the content by default */
+.collapsableContent[inherit-scope] {
+  /* Hide by default */
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 1s;
+}
+
+/* Show Content when label::checkbox is 'checked' and hide when 'unchecked' */
+.toggleCheck:checked + .collapsableContent[inherit-scope] {
+  max-height: 100vh; /* TODO:if this obtusely large/dramatic is too big, update later */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* /Components/Shared/NumericInput_Shared_Local.razor.rz.scp.css */
+:root[b-64qmztb9a2] {
+
+  --four-corners-gradient-text-color1: azure;
+
+}
+
+body[b-64qmztb9a2] {
+}
+
+.tiny-button .input-button[b-64qmztb9a2] {
+  border: none;
+  background: none;
+  color: var(--four-corners-gradient-text-color1);
+  font-synthesis: style weight;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 4px;
+  padding-block: 4px;
+}
+
+.tiny-text .tiny-number .editable-label[b-64qmztb9a2] {
+  border: none;
+  background: none;
+  color: var(--four-corners-gradient-text-color1);
+  font-synthesis: style weight;
+  font-weight: 300;
+  margin: 4px;
+  padding-block: 4px;
+}
+
+.numeric-input .custom-input .small-input[b-64qmztb9a2] {
+  border: none;
+  background: none;
+  color: var(--four-corners-gradient-text-color1);
+  font-synthesis: style weight;
+  font-weight: 300;
+  margin: 4px;
+  padding-block: 4px;
+
+  border: 2px ridge #7e12ea;
+}
+
+.menu[b-64qmztb9a2], .modal[b-64qmztb9a2], .window[b-64qmztb9a2], .form[b-64qmztb9a2], .panel[b-64qmztb9a2], .full-component[b-64qmztb9a2] {
+  color: var(--four-corners-gradient-text-color1);
+  
+  background: var(--four-corners-gradient-background);
+  background-blend-mode: var(--four-corners-gradient-background-blend-mode);
+
+  border: var(--four-corners-gradient-border);
+  border-radius: var(--four-corners-gradient-border-radius);
+  border-width: var(--four-corners-gradient-border-width);
+}
+/* /Layout/MainLayout.razor.rz.scp.css */
+:root[b-j874ih6l23] {
+  --four-corners-gradient-color1: #0000B0;
+  --four-corners-gradient-color2: #000050;
+  --four-corners-gradient-color3: #000020;
+  --four-corners-gradient-color4: #000080;
+}
+
+.default-blue-theme[b-j874ih6l23] {
+  --four-corners-gradient-color1: #0000B0;
+  --four-corners-gradient-color2: #000050;
+  --four-corners-gradient-color3: #000020;
+  --four-corners-gradient-color4: #000080;
+}
+
+.purple-theme[b-j874ih6l23] {
+  --four-corners-gradient-color1: #9600B0;
+  --four-corners-gradient-color2: #250050;
+  --four-corners-gradient-color3: #000020;
+  --four-corners-gradient-color4: #3F0080;
+}
+
+.page[b-j874ih6l23] {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+main[b-j874ih6l23] {
+    flex: 1;
+}
+
+.sidebar[b-j874ih6l23] {
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-j874ih6l23] {
+    /*
+      background-color: #f7f7f7;
+    */
+    background-color: #212529;
+    border-bottom: 1px solid #d6d5d5;
+    justify-content: flex-end;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    z-index: -3;
+}
+
+    .top-row[b-j874ih6l23]  a, .top-row[b-j874ih6l23]  .btn-link {
+        white-space: nowrap;
+        margin-left: 1.5rem;
+        text-decoration: none;
+    }
+
+    .top-row[b-j874ih6l23]  a:hover, .top-row[b-j874ih6l23]  .btn-link:hover {
+        text-decoration: underline;
+    }
+
+    .top-row[b-j874ih6l23]  a:first-child {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+@media (max-width: 640.98px) {
+    .top-row[b-j874ih6l23] {
+        justify-content: space-between;
+    }
+
+    .top-row[b-j874ih6l23]  a, .top-row[b-j874ih6l23]  .btn-link {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px) {
+    .page[b-j874ih6l23] {
+        flex-direction: row;
+    }
+
+    .sidebar[b-j874ih6l23] {
+        width: 250px;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+    }
+
+    .top-row[b-j874ih6l23] {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .top-row.auth[b-j874ih6l23]  a:first-child {
+        flex: 1;
+        text-align: right;
+        width: 0;
+    }
+
+    .top-row[b-j874ih6l23], article[b-j874ih6l23] {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
+
+article.content.px-4[b-j874ih6l23] {
+  /* background-color: black; */
+  background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color2), var(--four-corners-gradient-color1) 50%);
+  background-blend-mode: screen;
+  color: azure;
+
+  border: outset #cab;
+  border-radius: 0.3em;
+  border-width: 2px;
+  /*
+  border-color: #cab;
+  border-style: outset;
+  */
+}
+/* /Layout/NavMenu.razor.rz.scp.css */
+.navbar-toggler[b-oilmvlvftl] {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.top-row[b-oilmvlvftl] {
+    height: 3.5rem;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.navbar-brand[b-oilmvlvftl] {
+    font-size: 1.1rem;
+}
+
+.bi[b-oilmvlvftl] {
+    display: inline-block;
+    position: relative;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+    top: -1px;
+    background-size: cover;
+}
+
+.bi-house-door-fill-nav-menu[b-oilmvlvftl] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-house-door-fill' viewBox='0 0 16 16'%3E%3Cpath d='M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z'/%3E%3C/svg%3E");
+}
+
+.bi-plus-square-fill-nav-menu[b-oilmvlvftl] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-plus-square-fill' viewBox='0 0 16 16'%3E%3Cpath d='M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z'/%3E%3C/svg%3E");
+}
+
+.bi-list-nested-nav-menu[b-oilmvlvftl] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-list-nested' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4.5 11.5A.5.5 0 0 1 5 11h10a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm-2-4A.5.5 0 0 1 1 3h10a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5z'/%3E%3C/svg%3E");
+}
+
+.nav-item[b-oilmvlvftl] {
+    font-size: 0.9rem;
+    padding-bottom: 0.5rem;
+}
+
+    .nav-item:first-of-type[b-oilmvlvftl] {
+        padding-top: 1rem;
+    }
+
+    .nav-item:last-of-type[b-oilmvlvftl] {
+        padding-bottom: 1rem;
+    }
+
+    .nav-item[b-oilmvlvftl]  a {
+        color: #d7d7d7;
+        border-radius: 4px;
+        height: 3rem;
+        display: flex;
+        align-items: center;
+        line-height: 3rem;
+    }
+
+.nav-item[b-oilmvlvftl]  a.active {
+    background-color: rgba(255,255,255,0.37);
+    color: white;
+}
+
+.nav-item[b-oilmvlvftl]  a:hover {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+@media (min-width: 641px) {
+    .navbar-toggler[b-oilmvlvftl] {
+        display: none;
+    }
+
+    .collapse[b-oilmvlvftl] {
+        /* Never collapse the sidebar for wide screens */
+        display: block;
+    }
+    
+    .nav-scrollable[b-oilmvlvftl] {
+        /* Allow sidebar to scroll for tall menus */
+        height: calc(100vh - 3.5rem);
+        overflow-y: auto;
+    }
+}
+/* /Pages/FF7/FF7LimitTracker.razor.rz.scp.css */
+body[b-27fe6148y8] {
+}
+
+/*   BEGIN :: Collapsing/Expanding Panels    */
+
+/* 1. Hide the checkbox (use <label for="checkBoxID" .../> so label becomes clickable... */
+.toggleCheck[b-27fe6148y8] {
+  display: none;
+}
+
+/* 2. Hide the content by default */
+.collapsableContent[b-27fe6148y8] {
+  /* Hide by default */
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 1s;
+}
+
+/* Show Content when label::checkbox is 'checked' and hide when 'unchecked' */
+.toggleCheck:checked + .collapsableContent[b-27fe6148y8] {
+  max-height: 100vh; /* TODO:if this obtusely large/dramatic is too big, update later */
+  opacity: 1;
+  visibility: visible;
+}
+/* /_Imports.razor.rz.scp.css */
+body[b-yur15ujvkh] {
+}

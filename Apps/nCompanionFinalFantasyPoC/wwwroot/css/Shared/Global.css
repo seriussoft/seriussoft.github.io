@@ -1,0 +1,85 @@
+﻿body {
+}
+
+/*   BEGIN :: Collapsing/Expanding Panels    */
+
+/* 1. Hide the checkbox (use <label for="checkBoxID" .../> so label becomes clickable... */
+.toggleStateCheck {
+  display: none;
+}
+
+/* 2. Hide the content by default */
+.collapsableContent {
+
+  /* Hide by default */
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 1s;
+
+}
+
+/* Show Content when label::checkbox is 'checked' and hide when 'unchecked' */
+.toggleStateCheck:checked + .collapsableContent {
+
+  max-height: 100vh; /* TODO:if this obtusely large/dramatic is too big, update later */
+  opacity: 1;
+  visibility: visible;
+}
+
+
+
+/*     END :: Collapsing/Expanding Panels    */
+
+/*         */
+/*   BEGIN ::    */
+
+/* (A) HIDE CHECKBOX */
+.togCheck {
+  display: none;
+}
+
+/* (B) HIDE CONTENT BY DEFAULT */
+.togContent {
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 1s;
+}
+
+/* (C) SHOW CONTENT WHEN CHECKED */
+.togCheck:checked + .togContent {
+  max-height: 100vh; /* any insanely large number if a lot of contents */
+  opacity: 1;
+  visibility: visible;
+}
+
+/* (X) COSMETICS - DOES NOT MATTER */
+/* (X1) ENTIRE DEMO */
+* {
+  font-family: arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* (X2) TOGGLE BUTTON */
+.togButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  background: #00409f;
+  cursor: pointer;
+}
+
+/* (X3) CONTENT */
+.togContent {
+  background: #f4f6ff;
+}
+
+  .togContent p {
+    padding: 50px 10px;
+    margin: 0;
+  }
+
+/*    END ::     */
+

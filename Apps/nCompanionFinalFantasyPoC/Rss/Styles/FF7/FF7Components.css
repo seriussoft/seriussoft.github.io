@@ -1,0 +1,96 @@
+﻿@import url(FF7Global.css);
+@import url(../Shared/SharedComponents.css);
+
+:root {
+  --four-corners-gradient-color1: #0000B0;
+  --four-corners-gradient-color2: #000050;
+  --four-corners-gradient-color3: #000020;
+  --four-corners-gradient-color4: #000080;
+
+  --four-corners-gradient-text-color1: azure;
+
+  --four-corners-gradient-background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color3), var(--four-corners-gradient-color1) 50%);
+  --four-corners-gradient-background-blend-mode: screen;
+
+  --four-corners-gradient-border: outset #cab;
+  --four-corners-gradient-border-radius: 0.3em;
+  --four-corners-gradient-border-width: 2px;
+
+  --four-corners-gradient-overlay-input-bgcolor: #cccccc33;
+  --four-corners-gradient-overlay-input-blend-mode: overlay;
+}
+
+/**********************************************
+  * --four-corners-gradient-color1: #9600B0;  *
+  * --four-corners-gradient-color2: #250050;  *
+  * --four-corners-gradient-color3: #000020;  *
+  * --four-corners-gradient-color4: #3F0080;  *
+  *********************************************/
+
+.default-blue-theme {
+  --four-corners-gradient-color1: #0000B0;
+  --four-corners-gradient-color2: #000050;
+  --four-corners-gradient-color3: #000020;
+  --four-corners-gradient-color4: #000080;
+
+  --four-corners-gradient-text-color1: azure;
+
+  /*
+  --four-corners-gradient-background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color2), var(--four-corners-gradient-color1) 50%);
+  --four-corners-gradient-background-blend-mode: screen;
+
+  --four-corners-gradient-border: outset #cab;
+  --four-corners-gradient-border-radius: 0.3em;
+  --four-corners-gradient-border-width: 2px;
+
+  --four-corners-gradient-overlay-input-bgcolor: #cccccc33;
+  --four-corners-gradient-overlay-input-blend-mode: overlay;
+  */
+}
+
+.purple-theme {
+  --four-corners-gradient-color1: #9600B0;
+  --four-corners-gradient-color2: #250050;
+  --four-corners-gradient-color3: #000020;
+  --four-corners-gradient-color4: #3F0080;
+
+  --four-corners-gradient-text-color1: azure;
+
+  /*
+  --four-corners-gradient-background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color2), var(--four-corners-gradient-color1) 50%);
+  --four-corners-gradient-background-blend-mode: screen;
+
+  --four-corners-gradient-border: outset #cab;
+  --four-corners-gradient-border-radius: 0.3em;
+  --four-corners-gradient-border-width: 2px;
+
+  --four-corners-gradient-overlay-input-bgcolor: #cccccc33;
+  --four-corners-gradient-overlay-input-blend-mode: overlay;
+  */
+}
+
+
+
+
+body {
+
+}
+
+input[type=number] {
+  background-color: #cccccc33;
+  background-blend-mode: overlay;
+}
+
+.menu-item {
+}
+
+.menu, .modal, .window, .form, .panel, .full-component {
+  color: var(--four-corners-gradient-text-color1);
+  
+  background: var(--four-corners-gradient-background);
+  background-blend-mode: var(--four-corners-gradient-background-blend-mode);
+
+  border: var(--four-corners-gradient-border);
+  border-radius: var(--four-corners-gradient-border-radius);
+  border-width: var(--four-corners-gradient-border-width);
+}

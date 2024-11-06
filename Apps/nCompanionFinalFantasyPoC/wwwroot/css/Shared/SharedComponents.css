@@ -1,0 +1,54 @@
+﻿:root {
+  --four-corners-gradient-text-color1: azure;
+}
+
+body {
+}
+
+.tiny-button .input-button {
+  
+  border: none;
+  background: none;
+  color: var(--four-corners-gradient-text-color1);
+  font-synthesis: style weight;
+  font-size: 16px;
+  font-weight: 600;
+  
+  margin: 4px;
+  padding-block: 4px;
+}
+
+.tiny-text .tiny-number .editable-label {
+
+  border: none;
+  background: none;
+  color: var(--four-corners-gradient-text-color1);
+  font-synthesis: style weight;
+  font-weight: 300;
+  
+  margin: 4px;
+  padding-block: 4px;
+
+  
+}
+
+.numeric-input .custom-input .small-input {
+
+  border: none;
+  background: none;
+  color: var(--four-corners-gradient-text-color1);
+  font-synthesis: style weight;
+  font-weight: 300;
+
+  margin: 4px;
+  padding-block: 4px;
+
+}
+
+/* 
+numeric-input custom-input small-input rounded-pill {
+
+}
+
+*/
+

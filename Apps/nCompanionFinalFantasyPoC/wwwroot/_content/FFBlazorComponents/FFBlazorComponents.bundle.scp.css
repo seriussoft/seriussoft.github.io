@@ -1,0 +1,98 @@
+/* _content/FFBlazorComponents/Component1.razor.rz.scp.css */
+.my-component[b-0e26qivusj] {
+    border: 2px dashed red;
+    padding: 1em;
+    margin: 1em 0;
+    background-image: url('background.png');
+}
+/* _content/FFBlazorComponents/Shared/UnaryComponents/NumericInput.razor.rz.scp.css */
+:root[b-ci65efh15n] {
+  
+  
+  
+
+  --four-corners-gradient-color1: #0000B0;
+  --four-corners-gradient-color2: #000050;
+  --four-corners-gradient-color3: #000020;
+  --four-corners-gradient-color4: #000080;
+
+  --four-corners-gradient-text-color1: azure;
+  
+  --four-corners-gradient-background: linear-gradient(45deg, var(--four-corners-gradient-color4), var(--four-corners-gradient-color2) 50%), linear-gradient(-45deg, var(--four-corners-gradient-color3), var(--four-corners-gradient-color1) 50%);
+  --four-corners-gradient-background-blend-mode: screen;
+
+  --four-corners-gradient-border: outset #cab;
+  --four-corners-gradient-border-radius: 0.3em;
+  --four-corners-gradient-border-width: 2px;
+
+  --four-corners-gradient-overlay-input-bgcolor: #cccccc33;
+  --four-corners-gradient-overlay-input-blend-mode: overlay;
+  
+  --four-corners-gradient-overlay-small-block-background: none;
+}
+
+body[b-ci65efh15n] {
+
+
+
+}
+
+.inline-input[b-ci65efh15n] {
+
+
+
+}
+
+.game-button[b-ci65efh15n] {
+
+   border-radius: 5em;
+
+}
+
+.editable-label[b-ci65efh15n] {
+
+  
+
+}
+
+.tiny-button .input-button[b-ci65efh15n] {
+  border: none;
+  background: var(--four-corners-gradient-overlay-small-block-background);
+  color: var(--four-corners-gradient-text-color1);
+  font-synthesis: style weight;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 4px;
+  padding-block: 4px;
+  
+}
+
+.tiny-text .tiny-number .editable-label[b-ci65efh15n] {
+  border: none;
+  background: var(--four-corners-gradient-overlay-small-block-background);
+  color: var(--four-corners-gradient-text-color1);
+  font-synthesis: style weight;
+  font-weight: 300;
+  margin: 4px;
+  padding-block: 4px;
+}
+
+.numeric-input .custom-input .small-input[b-ci65efh15n] {
+  border: none;
+  background: var(--four-corners-gradient-overlay-small-block-background);
+  color: var(--four-corners-gradient-text-color1);
+  font-synthesis: style weight;
+  font-weight: 300;
+  margin: 4px;
+  padding-block: 4px;
+  border: 2px ridge #7e12ea;
+}
+
+.menu[b-ci65efh15n], .modal[b-ci65efh15n], .window[b-ci65efh15n], .form[b-ci65efh15n], .panel[b-ci65efh15n], .full-component[b-ci65efh15n] {
+  color: var(--four-corners-gradient-text-color1);
+  background: var(--four-corners-gradient-background);
+  background-blend-mode: var(--four-corners-gradient-background-blend-mode);
+  border: var(--four-corners-gradient-border);
+  border-radius: var(--four-corners-gradient-border-radius);
+  border-width: var(--four-corners-gradient-border-width);
+}
