@@ -1,12 +1,18 @@
 <html>
 
 <head>
+
+  
+  
   <style type="css">
+
+    /*********************
+    
         details {
       border: 1px solid #ccc;
       border-radius: 6px;
       margin-bottom: 10px;
-      width: 300px; /* Adjust to your needs */
+      width: 300px; / * Adjust to your needs * /
     }
     
     summary {
@@ -15,18 +21,65 @@
       font-weight: bold;
       cursor: pointer;
       outline: none;
-      list-style: none; /* Hides the default arrow in Chrome/Safari */
+      list-style: none; / * Hides the default arrow in Chrome/Safari * /
     }
     
-    /* Adds a custom arrow icon */
+    / * Adds a custom arrow icon * /
     summary::-webkit-details-marker {
-      display: none; /* Hides the arrow in older WebKit browsers */
+      display: none; / * Hides the arrow in older WebKit browsers * /
     }
     
     .panel-content {
       padding: 15px;
       border-top: 1px solid #ccc;
     }
+
+    * / / * END::Original-Expando-Attempt * /
+    
+    *****/
+
+    /* Container layout for consistency */
+    details {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      width: 300px;
+    }
+    
+    /* Base Summary styling */
+    summary {
+      background-color: #f1f1f1;
+      padding: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+      
+      /* 1. Force remove the native un-stylable marker */
+      list-style: none; 
+    }
+    summary::-webkit-details-marker {
+      display: none; /* Legacy browser fallback */
+    }
+    
+    /* 2. Re-inject the collapsed arrow text-code manually */
+    summary::before {
+      content: "\25B6"; /* Unicode text code for ▶ */
+      display: inline-block;
+      margin-right: 8px;
+      transition: transform 0.2s ease; /* Optional: smooth rotation */
+    }
+    
+    /* 3. Re-inject the expanded arrow text-code when the panel is active/open */
+    details[open] summary::before {
+      content: "\25BC"; /* Unicode text code for ▼ */
+    }
+    
+    /* Content area fallback styling */
+    .panel-content {
+      padding: 15px;
+      border-top: 1px solid #ccc;
+    }
+    
   </style>
   
   <script type="text/JavaScript">
