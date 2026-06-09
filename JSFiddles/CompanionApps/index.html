@@ -2,7 +2,31 @@
 
 <head>
   <style type="css">
+        details {
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      width: 300px; /* Adjust to your needs */
+    }
     
+    summary {
+      background-color: #f1f1f1;
+      padding: 12px;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none;
+      list-style: none; /* Hides the default arrow in Chrome/Safari */
+    }
+    
+    /* Adds a custom arrow icon */
+    summary::-webkit-details-marker {
+      display: none; /* Hides the arrow in older WebKit browsers */
+    }
+    
+    .panel-content {
+      padding: 15px;
+      border-top: 1px solid #ccc;
+    }
   </style>
   
   <script type="text/JavaScript">
